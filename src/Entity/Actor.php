@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Movie;
 use App\Repository\ActorRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -19,11 +20,10 @@ class Actor
     private ?string $name = null;
 
     #[ORM\ManyToMany(targetEntity: Movie::class, mappedBy: 'actors')]
-    private Collection $age;
 
     public function __construct()
     {
-        $this->age = new ArrayCollection();
+        
     }
 
     public function getId(): ?int
@@ -43,30 +43,15 @@ class Actor
         return $this;
     }
 
-    /**
-     * @return Collection<int, Movie>
-     */
-    public function getAge(): Collection
+    public function addMovies(Movie $movie): self
     {
-        return $this->age;
-    }
-
-    public function addAge(Movie $age): static
-    {
-        if (!$this->age->contains($age)) {
-            $this->age->add($age);
-            $age->addActor($this);
+        if(!$this->movies->contains($movie)){
+            $this->movies[] = $movie;
+            $movie->addActor($actor);
         }
-
         return $this;
     }
 
-    public function removeAge(Movie $age): static
-    {
-        if ($this->age->removeElement($age)) {
-            $age->removeActor($this);
-        }
 
-        return $this;
-    }
+
 }
