@@ -24,10 +24,16 @@ class __TwigTemplate_535f439f8dae813ed00413d481848242 extends Template
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'body' => [$this, 'block_body'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -36,42 +42,53 @@ class __TwigTemplate_535f439f8dae813ed00413d481848242 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "index.html.twig"));
 
-        // line 1
-        echo "<!DOCTYPE html>
-<html>
-<head>
-\t<meta charset=\"utf-8\">
-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-\t<title></title>
-</head>
-<body>
+        $this->parent = $this->loadTemplate("base.html.twig", "index.html.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
-\t<h1>Welcome to the Movies World!</h1>
+    }
 
-\t<h2>My Movie List:</h2>
+    // line 4
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-\t<h3> ";
-        // line 14
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 14, $this->source); })()), "html", null, true);
-        echo " </h3>
+        // line 5
+        echo "\tMovies Page
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
+    }
+
+    // line 8
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 9
+        echo "\t
 \t";
-        // line 16
-        if ((isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 16, $this->source); })())) {
-            // line 17
-            echo "\t\t<p> ";
-            echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new RuntimeError('Variable "title" does not exist.', 17, $this->source); })()), "html", null, true);
-            echo " is a Movie </p>
-\t";
-        } else {
-            // line 19
-            echo "\t\t<p>No Movie is mentioned</p>
+        // line 10
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["movies"]) || array_key_exists("movies", $context) ? $context["movies"] : (function () { throw new RuntimeError('Variable "movies" does not exist.', 10, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["movie"]) {
+            // line 11
+            echo "\t\t<li>";
+            echo "</li>
 \t";
         }
-        // line 21
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['movie'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 13
         echo "
-</body>
-</html>";
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -98,33 +115,24 @@ class __TwigTemplate_535f439f8dae813ed00413d481848242 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  72 => 21,  68 => 19,  62 => 17,  60 => 16,  55 => 14,  40 => 1,);
+        return array (  90 => 13,  82 => 11,  78 => 10,  75 => 9,  68 => 8,  60 => 5,  53 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<!DOCTYPE html>
-<html>
-<head>
-\t<meta charset=\"utf-8\">
-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-\t<title></title>
-</head>
-<body>
+        return new Source("{% extends \"base.html.twig\" %}
 
-\t<h1>Welcome to the Movies World!</h1>
 
-\t<h2>My Movie List:</h2>
+{% block title %}
+\tMovies Page
+{% endblock %}
 
-\t<h3> {{ title }} </h3>
+{% block body %}
+\t
+\t{% for movie in movies %}
+\t\t<li>{# movie #}</li>
+\t{% endfor %}
 
-\t{% if title %}
-\t\t<p> {{ title }} is a Movie </p>
-\t{% else %}
-\t\t<p>No Movie is mentioned</p>
-\t{% endif %}
-
-</body>
-</html>", "index.html.twig", "/Applications/xampp/xamppfiles/htdocs/symfony_basic/templates/index.html.twig");
+{% endblock %}", "index.html.twig", "/Applications/xampp/xamppfiles/htdocs/symfony_basic/templates/index.html.twig");
     }
 }

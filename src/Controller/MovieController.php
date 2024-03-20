@@ -11,10 +11,11 @@ class MovieController extends AbstractController
 {
     #[Route('/movies', name: 'app_movie')]
     public function index()
-    {
-        return $this->render('index.html.twig', [
-            'title' => 'Inception'
-        ]);
+    {   
+        $movies = ['Inception', 'Loki', 'Black'];
+        return $this->render('index.html.twig', array(
+            'movies' => $movies
+        ));
     }
 
 

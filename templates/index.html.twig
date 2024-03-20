@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-</head>
-<body>
+{% extends "base.html.twig" %}
 
-	<h1>Welcome to the Movies World!</h1>
 
-	<h2>My Movie List:</h2>
+{% block title %}
+	Movies Page
+{% endblock %}
 
-	<h3> {{ title }} </h3>
+{% block body %}
+	
+	{% for movie in movies %}
+		<li>{{ movie }}</li>
+	{% endfor %}
 
-	{% if title %}
-		<p> {{ title }} is a Movie </p>
-	{% else %}
-		<p>No Movie is mentioned</p>
-	{% endif %}
-
-</body>
-</html>
+{% endblock %}
