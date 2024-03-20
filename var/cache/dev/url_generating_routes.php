@@ -4,4 +4,8 @@
 
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
+    'app_movie' => [[], ['_controller' => 'App\\Controller\\MovieController::index'], [], [['text', '/movies']], [], [], []],
+    'movie' => [['name'], ['name' => null, '_controller' => 'App\\Controller\\MovieController::movie'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/movie']], [], [], []],
+    'App\Controller\MovieController::index' => [[], ['_controller' => 'App\\Controller\\MovieController::index'], [], [['text', '/movies']], [], [], []],
+    'App\Controller\MovieController::movie' => [['name'], ['name' => null, '_controller' => 'App\\Controller\\MovieController::movie'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/movie']], [], [], []],
 ];

@@ -10,13 +10,13 @@ use Symfony\Component\Runtime\Runner\Symfony\Symfony;
 class MovieController extends AbstractController
 {
     #[Route('/movies', name: 'app_movie')]
-    public function index(): JsonResponse
+    public function index()
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/MovieController.php',
+        return $this->render('index.html.twig', [
+            'title' => 'Inception'
         ]);
     }
+
 
     #[Route('/movie/{name}', name: 'movie', defaults:['name' => null], methods:['GET','HEAD'])]
     public function movie($name): JsonResponse
