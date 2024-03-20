@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\MovieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
@@ -10,12 +11,13 @@ use Symfony\Component\Runtime\Runner\Symfony\Symfony;
 class MovieController extends AbstractController
 {
     #[Route('/movies', name: 'app_movie')]
-    public function index()
+    public function index(MovieRepository $movieRepository)
     {   
-        $movies = ['Inception', 'Loki', 'Black'];
-        return $this->render('index.html.twig', array(
-            'movies' => $movies
-        ));
+        $movies = $movieRepository->findAll();
+
+        dd($movies);
+
+        return $this->render('index.html.twig');
     }
 
 
