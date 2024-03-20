@@ -73,7 +73,7 @@ class __TwigTemplate_839c0ec922084200ac7a9943c49fca66 extends Template
 
         // line 9
         echo "\t
-\t<h1>Yahoooo</h1>
+\t<h1 class=\"bg-blue-500 text-2xl text-center font-bold\">Yahoooo</h1>
 
 
 ";
@@ -117,7 +117,7 @@ class __TwigTemplate_839c0ec922084200ac7a9943c49fca66 extends Template
 
 {% block body %}
 \t
-\t<h1>Yahoooo</h1>
+\t<h1 class=\"bg-blue-500 text-2xl text-center font-bold\">Yahoooo</h1>
 
 
 {% endblock %}", "index.html.twig", "/Applications/xampp/xamppfiles/htdocs/symfony_basic/templates/index.html.twig");

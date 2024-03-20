@@ -36,7 +36,7 @@ Dependencies: npm install webpack-notifier@^1.6.0 --save-dev\
 \
 Dependencies: npm install -g @symfony/webpack-encore\
 \
-\
+Dependencies: npm install -D tailwindcss postcss-loader purgecss-webpack-plugin glob-all path\
 \
 Create Controller: symfony console make:controller BasicController\
 \
@@ -55,6 +55,8 @@ Symfony Migration:  symfony console make:migration\
 Symfony Make Migration to Database:  symfony console doctrine:migration:migrate\
 \
 Symfony Database Fixture Load: symfony console doctrine:fixtures:load \
+\
+Symfony Tailwind: npx tailwindcss init -p\
 \
 \
 \
