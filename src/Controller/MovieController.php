@@ -9,7 +9,7 @@ use Symfony\Component\Runtime\Runner\Symfony\Symfony;
 
 class MovieController extends AbstractController
 {
-    #[Route('/movie', name: 'app_movie')]
+    #[Route('/movies', name: 'app_movie')]
     public function index(): JsonResponse
     {
         return $this->json([
@@ -17,4 +17,14 @@ class MovieController extends AbstractController
             'path' => 'src/Controller/MovieController.php',
         ]);
     }
+
+    #[Route('/movie/{name}', name: 'movie', defaults:['name' => null], methods:['GET','HEAD'])]
+    public function movie($name): JsonResponse
+    {
+        return $this->json([
+            'message' => 'Movie Name: '.$name,
+            'path' => 'src/Controller/MovieController.php',
+        ]);
+    }
+
 }
