@@ -75,6 +75,11 @@ class __TwigTemplate_839c0ec922084200ac7a9943c49fca66 extends Template
         echo "\t
 \t<h1 class=\"bg-blue-500 text-2xl text-center font-bold\">Yahoooo</h1>
 
+\t<img src=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/image1.c6627482.jpg"), "html", null, true);
+        echo "\">
+
 
 ";
         
@@ -103,7 +108,7 @@ class __TwigTemplate_839c0ec922084200ac7a9943c49fca66 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  75 => 9,  68 => 8,  60 => 5,  53 => 4,  36 => 1,);
+        return array (  80 => 12,  75 => 9,  68 => 8,  60 => 5,  53 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -118,6 +123,8 @@ class __TwigTemplate_839c0ec922084200ac7a9943c49fca66 extends Template
 {% block body %}
 \t
 \t<h1 class=\"bg-blue-500 text-2xl text-center font-bold\">Yahoooo</h1>
+
+\t<img src=\"{{ asset('build/images/image1.c6627482.jpg') }}\">
 
 
 {% endblock %}", "index.html.twig", "/Applications/xampp/xamppfiles/htdocs/symfony_basic/templates/index.html.twig");

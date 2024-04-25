@@ -58,13 +58,13 @@ class __TwigTemplate_f1410b5210823dc6e2562971afef02f9 extends Template
         ";
         // line 11
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 14
         echo "    </head>
     <body>
         ";
-        // line 17
+        // line 16
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 17
         echo "    </body>
 </html>
 ";
@@ -114,17 +114,13 @@ class __TwigTemplate_f1410b5210823dc6e2562971afef02f9 extends Template
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
-            ";
-        // line 13
-        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("method2");
-        echo "
         ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
-    // line 17
+    // line 16
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -149,7 +145,7 @@ class __TwigTemplate_f1410b5210823dc6e2562971afef02f9 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  128 => 17,  119 => 13,  114 => 12,  107 => 11,  97 => 8,  90 => 7,  77 => 5,  68 => 18,  66 => 17,  62 => 15,  60 => 11,  57 => 10,  55 => 7,  50 => 5,  44 => 1,);
+        return array (  124 => 16,  114 => 12,  107 => 11,  97 => 8,  90 => 7,  77 => 5,  68 => 17,  66 => 16,  62 => 14,  60 => 11,  57 => 10,  55 => 7,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -166,7 +162,6 @@ class __TwigTemplate_f1410b5210823dc6e2562971afef02f9 extends Template
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-            {{ encore_entry_script_tags('method2') }}
         {% endblock %}
     </head>
     <body>
